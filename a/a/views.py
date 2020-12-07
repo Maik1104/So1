@@ -42,7 +42,7 @@ def inicio(request):
         rCarpetas[0].append(carpetas2[i])
 
     return render(request, "index2.html",
-                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
+                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2,
                    "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
 
@@ -86,7 +86,7 @@ def buscar(request):
         rCarpetas[0].append(carpetas2[i])
 
     return render(request, "index2.html",
-                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
+                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2,
                    "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
 
