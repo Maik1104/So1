@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from a.views import inicio
+from a.views import inicio, buscar
 
 
 urlpatterns = [
     path('', inicio),
+    path('buscar/', buscar)
 ]
