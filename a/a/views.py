@@ -47,7 +47,7 @@ def crearA(request):
         name = request.GET["creado"]
         system(f"touch {name}")
         mensaje = "El archivo fue creado con exito"
-        mensaje = request.get["archivo"]
+        mensaje = request.get["exampleRadios"]
     except:
         mensaje = ""
 
