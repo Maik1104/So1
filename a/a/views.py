@@ -2,7 +2,7 @@ from django.shortcuts import render
 from subprocess import *
 from os import system
 
-def inicio(request, opcion):
+def inicio(request):
 
 
     ubicacion = getoutput("pwd")
