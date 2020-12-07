@@ -14,7 +14,6 @@
         body {background-color:beige; font-family: Bahnschrift; margin: 15px}
         div.form-check {font-family: Bahnschrift}
         .archiv, .carpet {height: 70px; width: 90px;}
-        .archiv{background-image: url("iconos/archivo.png")}
         .carpet{background: indianred}
 
     </style>
@@ -109,7 +108,7 @@
 <div class="row">
     {% for j in i %}
     <div class="col-2 d-flex justify-content-center flex-column align-items-center">
-        <button class="archiv"></button>
+        <input type="image" src="../iconos/archivo.png" class="archiv"></input>
         <label>{{ j }}</label>
     </div>
     {% endfor %}
