@@ -47,6 +47,12 @@ def crear(request):
     #com = "touch " + name
     #system(com)
     #res = getoutput("ls")
+    try:
+        name = request.GET["creado"]
+        system(f"touch {name}")
+    except:
+        pass
+    inicio()
     return render(request, "crear.html")
 
 def createFolder(name):
