@@ -43,7 +43,7 @@ def buscar(request):
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def crear(request):
-    name = request.GET[""]
+    #name = request.GET[""]
     com = "touch " + name
     system(com)
     res = getoutput("ls")
