@@ -2,15 +2,9 @@
 
 {% block content %}
 <br>
-<h1 style="font-size: 30px">Consultar otra ruta</h1>
-
-<form action="/otraRuta/" method="post">{% csrf_token %}
-  <div class="form-row">
-    <div class="form-group col-auto">
-    <label for="exampleInputEmail1">Ruta nueva:</label>
-    <input type="text" class="form-control" name="nuevaRuta" aria-describedby="emailHelp">
-  </div>
-  <button type="submit" class="btn btn-primary">Ver esta ruta</button>
-  </div>
-</form>
+    <h1 style="font-size: 30px">Consultar otra ruta</h1>
+    <form action="/otraRuta/" method="post">{% csrf_token %}
+        <p>Nueva Ruta: <input class="form-control" type="text" name="nuevaRuta"></p>
+        <input class="btn btn-primary" type="submit" value="Ver nueva ruta">
+    </form>
 {% endblock %}
