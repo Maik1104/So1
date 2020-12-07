@@ -406,11 +406,9 @@ def changeOwner(name, newOwner):
     return res
 
 def move(name, location):
-    changeName(name, location)
     return "Success"
 
 def cut(name, location):
-    copyAndPaste(name, location)
     com = "rm -r " + name
     system(com)
     return "Success"
