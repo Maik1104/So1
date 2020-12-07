@@ -70,7 +70,7 @@ def crearA(request):
     lCarpetas = range(len(carpetas2)//8)
     rCarpetas = range(len(carpetas2)%8)
 
-    return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje, "lArchivos":lArchivos, "rArchivos":rArchivos, "lCarpetas":lCarpetas, "rCarpetas":rCarpetas})
+    return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje, "lArchivos":lArchivos, "rArchivos":rArchivos, "lCarpetas":lCarpetas, "rCarpetas":rCarpetas, "numeros":[1,2,3,4,5,6,7,8]})
 
 def crearC(request):
 
