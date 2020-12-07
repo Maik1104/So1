@@ -194,7 +194,7 @@ def cambiarN(request):
         system(f"mv {nombreV} {nombreN}")
         mensaje = "El nombre del archivo fue cambiado con exito"
     except:
-        mensaje = ""
+        mensaje = "Hubo un error, vuelve a intentarlo"
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
