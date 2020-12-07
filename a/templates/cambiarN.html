@@ -4,7 +4,7 @@
 
     <br>
     <h1 style="font-size: 30px">Datos para cambiar nombre</h1>
-    <form action="/cambiarN/" method="post">
+    <form action="/cambiarN/" method="post">{% csrf_token %}
         <p>Nombre viejo: <input class="form-control" type="text" name="nombreV"></p>
         <p>Nombre nuevo: <input class="form-control" type="text" name="nombreN"></p>
         <input class="btn btn-primary" type="submit" value="Cambiar nombre">
