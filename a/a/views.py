@@ -84,7 +84,7 @@ def crearA(request):
         for j in range(8):
             lCarpetas[i].append(carpetas2[i*8+j])
 
-    for i in range(-1,-len(carpetas2)%8-1,-1):
+    for i in range(-1,-(len(carpetas2)%8)-1,-1):
         rCarpetas[0].append(carpetas2[i])
 
 
