@@ -1,0 +1,34 @@
+{% extends "index2.html" %}
+
+{% block content %}
+    <br>
+    <h1>Informacion de permisos:</h1>
+        <p>Los permisos se deben ingresar de acuerdo a la siguiente conviccion:</p>
+        <li>Debe ser un numero de 3 digitos, siendo (usuario)(grupo)(otros)</li>
+        <li>cada digito debe ser entre 0 y 7, siendo estos:
+            <ul>
+                <li>0 = No se tiene permiso</li>
+                <li>1 = Solo permiso de ejecucion</li>
+                <li>2 = Solo permiso de escritura</li>
+                <li>3 = Permiso de escritura y ejecucion</li>
+                <li>4 = Solo permiso de lectura</li>
+                <li>5 = Permiso de lectura y ejecucion</li>
+                <li>6 = Permiso de lectura y escritura</li>
+                <li>7 = Todos los permisos (lectura, escritura y ejecucion)</li>
+            </ul>
+        </li>
+        <p>Un ejemplo es el 711, donde El propietario lectura, escritura y ejecución, el grupo y otros solo ejecución.</p>
+
+<h1 style="font-size: 30px">Datos para modificar permisos</h1>
+
+    <form action="/mover/" method="post">{% csrf_token %}
+        <p>Nombre: <input class="form-control" type="text" name="nombre"></p>
+        <p>Numero (permisos): <input class="form-control" type="number" name="numero"></p>
+        <input class="btn btn-primary" type="submit" value="Cambiar permisos">
+    </form>
+
+
+<br>
+<h1>{{ archivo }}</h1>
+<h1>{{ mensaje }}</h1>
+{% endblock %}

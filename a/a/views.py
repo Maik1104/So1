@@ -434,12 +434,58 @@ def verPermisos(request):
                    "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8], "archivo":nombre})
 
-def seeInfo(name):
-    com = "ls -l " + name
-    system(com)
-    res = getoutput(com)
-    print(res)
-    return res
+
+def modificarPermisos(request):
+
+    try:
+        nombre = request.POST["nombre"]
+        numero = str(request.POST["numero"])
+        system(f"chmod -r {numero} {nombre}")
+        mensaje=getoutput(f"ls -l {nombre}")
+        nombre = f"La nueva informacion del objeto {nombre} es:"
+    except:
+        mensaje = ""
+        nombre = ""
+
+
+    ubicacion = getoutput("pwd")
+    carpetas = getoutput("find . -maxdepth 1 -type d")
+    carpetas = carpetas.split("\n")
+    carpetas2 = []
+    for i in range(1, len(carpetas)):
+        carpetas2.append(carpetas[i][2:])
+
+    archivos = getoutput("find . -maxdepth 1 -type f")
+    archivos = archivos.split("\n")
+    archivos2 = []
+    for i in range(len(archivos)):
+        archivos2.append(archivos[i][2:])
+
+    lArchivos = []
+    rArchivos = [[]]
+    lCarpetas = []
+    rCarpetas = [[]]
+
+    for i in range(len(archivos2) // 6):
+        lArchivos.append([])
+        for j in range(6):
+            lArchivos[i].append(archivos2[i * 6 + j])
+
+    for i in range(-1, -(len(archivos2) % 6) - 1, -1):
+        rArchivos[0].append(archivos2[i])
+
+    for i in range(len(carpetas2) // 6):
+        lCarpetas.append([])
+        for j in range(6):
+            lCarpetas[i].append(carpetas2[i * 6 + j])
+
+    for i in range(-1, -(len(carpetas2) % 6) - 1, -1):
+        rCarpetas[0].append(carpetas2[i])
+
+    return render(request, "verPermisos.html",
+                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
+                   "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
+                   "numeros": [1, 2, 3, 4, 5, 6, 7, 8], "archivo":nombre})
 
 def changeInfo(name, number):
     com = "chmod " + number + " " + name
