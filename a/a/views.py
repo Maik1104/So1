@@ -5,6 +5,7 @@ from django import forms
 
 def inicio(request):
 
+    system("cd ")
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
@@ -540,19 +541,3 @@ def modificarPropietario(request):
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8], "archivo":nombre})
 
 
-def changeOwner(name, newOwner):
-    com = "chown " + newOwner + " " + name
-    system(com)
-    res = getoutput(seeInfo(name))
-    print(res)
-    return res
-
-def move(name, location):
-    return "Success"
-
-def cut(name, location):
-    com = "rm -r " + name
-    system(com)
-    return "Success"
-
-cut("Nuevo", "./Final")
