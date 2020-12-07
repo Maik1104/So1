@@ -70,21 +70,20 @@ def crearA(request):
     rCarpetas = [[]]
 
 
-    for i in range(len(archivos2)//8):
+    for i in range(len(archivos2)//6):
         lArchivos.append([])
-        for j in range(8):
-            lArchivos[i].append(archivos2[i*8+j])
-        k = i
+        for j in range(6):
+            lArchivos[i].append(archivos2[i*6+j])
 
-    for i in range(-1,-(len(archivos2)%8)-1,-1):
+    for i in range(-1,-(len(archivos2)%6)-1,-1):
         rArchivos[0].append(archivos2[i])
 
-    for i in range(len(carpetas2)//8):
+    for i in range(len(carpetas2)//6):
         lCarpetas.append([])
-        for j in range(8):
-            lCarpetas[i].append(carpetas2[i*8+j])
+        for j in range(6):
+            lCarpetas[i].append(carpetas2[i*6+j])
 
-    for i in range(-1,-(len(carpetas2)%8)-1,-1):
+    for i in range(-1,-(len(carpetas2)%6)-1,-1):
         rCarpetas[0].append(carpetas2[i])
 
 
