@@ -44,10 +44,10 @@ def buscar(request):
 
 def crearA(request):
     try:
-        name = request.GET["creado"]
+        name = request.GET["exampleInputEmail1"]
         system(f"touch {name}")
         mensaje = "El archivo fue creado con exito"
-        mensaje = request.get["opcion"]
+
     except:
         mensaje = ""
 
