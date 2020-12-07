@@ -541,7 +541,7 @@ def modificarPropietario(request):
 
 def otraRuta(request):
 
-    busqueda = request.GET["aBuscar"]
+    busqueda = request.GET["ruta"]
     ubicacion = busqueda
     carpetas = getoutput(f"find {busqueda} -maxdepth 1 -type d ")
     carpetas = carpetas.split("\n")
