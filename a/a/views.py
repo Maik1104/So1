@@ -67,7 +67,7 @@ def crearA(request):
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
 
-    return render(request, "crear.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
+    return render(request, "crear.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje})
 
 def createFolder(name):
     com = "mkdir " + name
