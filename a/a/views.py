@@ -64,8 +64,14 @@ def crearA(request):
     archivos2 = []
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
+    lArchivos = []
+    for i in range(len(archivos2//8)):
+        lArchivos.append([])
+        for j in range(8):
+            lArchivos[i].append(archivos2[i*8+j])
 
-    lArchivos = range(len(archivos2)//8)
+
+    """lArchivos = range(len(archivos2)//8)"""
     rArchivos = range(len(archivos2)%8)
     lCarpetas = range(len(carpetas2)//8)
     rCarpetas = range(len(carpetas2)%8)
