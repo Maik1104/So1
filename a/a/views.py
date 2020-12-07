@@ -44,9 +44,9 @@ def buscar(request):
 
 def crear(request):
     #name = request.GET[""]
-    com = "touch " + name
-    system(com)
-    res = getoutput("ls")
+    #com = "touch " + name
+    #system(com)
+    #res = getoutput("ls")
     return render(request, "crear.html")
 
 def createFolder(name):
