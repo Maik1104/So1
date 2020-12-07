@@ -547,11 +547,11 @@ def otraRuta(request):
     except:
         busqueda = "."
         ubicacion = getoutput("pwd")
-    carpetas = getoutput(f"find {busqueda} -maxdepth 1 -type d ")
+    carpetas = getoutput(f"find {busqueda} -maxdepth 1 -type d")
     carpetas = carpetas.split("\n")
     carpetas2 = []
     for i in range(1, len(carpetas)):
-        carpetas2.append(carpetas[i][1:])
+        carpetas2.append(carpetas[i][len(busqueda)+1:])
 
 
     archivos = getoutput(f"find {busqueda} -maxdepth 1 -type f")
