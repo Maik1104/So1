@@ -541,12 +541,12 @@ def modificarPropietario(request):
 
 def otraRuta(request):
 
-    busqueda = request.POST["rutanueva"]
-    if busqueda == "":
+    try:
+        busqueda = request.POST["rutanueva"]
+        ubicacion = busqueda
+    except:
         busqueda = "."
         ubicacion = getoutput("pwd")
-    else:
-        ubicacion = busqueda
     carpetas = getoutput(f"find {busqueda} -maxdepth 1 -type d ")
     carpetas = carpetas.split("\n")
     carpetas2 = []
