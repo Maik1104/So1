@@ -65,10 +65,10 @@ def crearA(request):
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
 
-    lArchivos = len(archivos2)//8
-    rArchivos = len(archivos2)%8
-    lCarpetas = len(carpetas2) // 8
-    rCarpetas = len(carpetas2) % 8
+    lArchivos = range(len(archivos2)//8)
+    rArchivos = range(len(archivos2)%8)
+    lCarpetas = range(len(carpetas2)//8)
+    rCarpetas = range(len(carpetas2)%8)
 
     return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje, "lArchivos":lArchivos, "rArchivos":rArchivos, "lCarpetas":lCarpetas, "rCarpetas":rCarpetas})
 
