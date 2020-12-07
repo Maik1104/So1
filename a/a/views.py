@@ -389,7 +389,7 @@ def verPermisos(request):
     try:
         nombre = request.GET["nombre"]
         mensaje=getoutput(f"ls -l {nombre}")
-        nombre = f"La informacion del objeto {nombre} son:"
+        nombre = f"La informacion del objeto {nombre} es:"
     except:
         mensaje = ""
         nombre = ""
