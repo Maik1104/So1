@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo SO</title>
+    <style>
+    h1{
+    color: blue;
+    border-bottom: 3px solid blue;
+    text-align: center;
+}
+
+#execute{
+    background-color: rgb(159, 232, 235);
+    border-radius: 5px;
+    font-size: large;
+}
+
+#parameter{
+    height: 20px;
+    width: 156px;
+}
+
+#inputPar{
+    margin: 0px;
+}
+
+.form{
+    margin: 0px 20px 10px 0px;
+}
+
+.container{
+    border: 3px solid gray;
+    background-color: lightblue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+</style>
+
+</head>
+
+<body>
+    <div id="panel">
+        <h1>Ventana del Explorador de Archivos</h1>
+        <div id="response">
+            <p>Estamos en: {{ubicacion}}</p>
+            <br>
+            <p>
+            Carpetas:
+                {% for i in carpetas %}
+
+                <p>{{i}}</p>
+
+                {% endfor %}
+            </p>
+            <p>
+                Archivos:
+                {% for i in archivos %}
+
+                <p>{{i}}</p>
+
+                {% endfor %}
+
+            </p>
+        </div>
+    </div>
+    <div>
+        <form action="">
+            <div class="container">
+                <div class="form">
+                    <input type="radio" id="createFile" name="option">
+                    <label for="createFile">Crear Archivo</label><br>
+                    <input type="radio" id="createFolder" name="option">
+                    <label for="createFolder">Crear Carpeta</label><br>
+                    <input type="radio" id="changeName" name="option">
+                    <label for="changeName">Cambiar Nombre</label><br>
+                </div>
+                <div class="form">
+                    <input type="radio" id="deleteFile" name="option">
+                    <label for="deleteFile">Eliminar Archivo</label><br>
+                    <input type="radio" id="copyFile" name="option">
+                    <label for="copyFile">Copiar Archivo</label><br>
+                    <input type="radio" id="pasteFile" name="option">
+                    <label for="pasteFile">Pegar Archivo</label><br>
+                </div>
+                <div class="form">
+                    <input type="radio" id="seeInfo" name="option">
+                    <label for="seeInfo">Ver Permisos</label><br>
+                    <input type="radio" id="changeInfo" name="option">
+                    <label for="changeInfo">Cambiar Permisos</label><br>
+                    <input type="radio" id="changeOwner" name="option">
+                    <label for="changeOwner">Cambiar Propietario</label><br>
+                </div>
+                <div class="form">
+                    <input type="radio" id="moveFile" name="option">
+                    <label for="moveFile">Mover Archivo</label><br>
+                    <input type="radio" id="cutFile" name="option">
+                    <label for="cutFile">Cortar Archivo</label>
+                </div>
+                <div class="form">
+                    <label id="inputPar" for="parameter">Parámetros Adicionales:</label>
+                    <input id="parameter" type="text" placeholder="Ingrese parámetros"><br>
+                </div>
+                <input type="submit" id="execute" value="Ejecutar Comando"></button>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
