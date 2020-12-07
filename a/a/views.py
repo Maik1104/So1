@@ -284,7 +284,7 @@ def eliminar(request):
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
 
 
-def eliminar(request):
+def copiar(request):
 
     try:
         inicio = request.POST["inicio"]
