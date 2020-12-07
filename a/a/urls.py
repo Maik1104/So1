@@ -22,5 +22,5 @@ urlpatterns = [
     path('', inicio),
     path('buscar/', buscar),
     path('inicio/', inicio),
-    path('crear/', crearA)
+    path('crearA/', crearA)
 ]

@@ -44,24 +44,13 @@ def buscar(request):
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def crearA(request):
-    if (request.POST["opcion1"]) in ["Archivo", "archivo"]:
-        try:
-            name = request.POST["creado"]
-            system(f"touch {name}")
-            mensaje = "El archivo fue creado con exito"
-        except:
-            mensaje = ""
 
-    elif (request.POST["opcion1"]) in ["Carpeta", "carpeta"]:
-        try:
-            name = request.POST["creado"]
-            system(f"mkdir {name}")
-            mensaje = "La carpeta fue creada con exito"
-        except:
-            mensaje = ""
-
-    else:
-        mensaje = "Por favor ingrese 'Carpeta' o 'Archivo'"
+    try:
+        name = request.GET["creado"]
+        system(f"touch {name}")
+        mensaje = "El archivo fue creado con exito"
+    except:
+        mensaje = ""
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
