@@ -558,7 +558,7 @@ def otraRuta(request):
     archivos = archivos.split("\n")
     archivos2 = []
     for i in range(len(archivos)):
-        archivos2.append(archivos[i][2:])
+        archivos2.append(archivos[i][len(busqueda)+1:])
 
     lArchivos = []
     rArchivos = [[]]
