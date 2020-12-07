@@ -64,8 +64,9 @@ def crearA(request):
     archivos2 = []
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
-
-    return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje})
+    cantidad = (len(archivos)+len(carpetas))//8
+    resto = (len(archivos)+len(carpetas))%8
+    return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje, "cantidad":cantidad, "resto":resto})
 
 def crearC(request):
 
