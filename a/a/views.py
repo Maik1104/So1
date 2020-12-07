@@ -52,7 +52,7 @@ def crear(request):
         system(f"touch {name}")
     except:
         pass
-    inicio()
+    inicio(request)
     return render(request, "crear.html")
 
 def createFolder(name):
