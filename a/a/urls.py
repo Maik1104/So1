@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from a.views import inicio, buscar, crearA
+from a.views import inicio, buscar, crearA, crearC
 
 
 urlpatterns = [
     path('', inicio),
     path('buscar/', buscar),
     path('inicio/', inicio),
-    path('crearA/', crearA)
+    path('crearA/', crearA),
+    path('crearC', crearC)
 ]

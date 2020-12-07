@@ -65,7 +65,32 @@ def crearA(request):
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
 
-    return render(request, "crear.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje})
+    return render(request, "crearA.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje})
+
+def crearC(request):
+
+    try:
+        name = request.GET["creado"]
+        system(f"mkdir {name}")
+        mensaje = "La carpeta fue creada con exito"
+    except:
+        mensaje = ""
+
+    ubicacion = getoutput("pwd")
+    carpetas = getoutput("find . -maxdepth 1 -type d")
+    carpetas = carpetas.split("\n")
+    carpetas2 = []
+    for i in range(1, len(carpetas)):
+        carpetas2.append(carpetas[i][2:])
+
+    archivos = getoutput("find . -maxdepth 1 -type f")
+    archivos = archivos.split("\n")
+    archivos2 = []
+    for i in range(len(archivos)):
+        archivos2.append(archivos[i][2:])
+
+    return render(request, "crearC.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "mensaje":mensaje})
+
 
 def createFolder(name):
     com = "mkdir " + name

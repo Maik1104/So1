@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Directorio activo</title>
+
+  	  {# Cargamos la librería #}
+	  {% load bootstrap4 %}
+
+	  {# CSS Bootstrap #}
+	  {% bootstrap_css %}
+    <style>
+        body {background-color:beige; font-family: Bahnschrift; margin: 15px}
+        div.form-check {font-family: Bahnschrift}
+
+    </style>
+  </head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/inicio/">Directorio activo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/inicio/">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/crearA/">Crear archivo</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/crearC/">Crear carpeta</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Eliminar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Copiar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Modificar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Permisos</a>
+        </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/buscar/" method="GET">
+      <input class="form-control mr-sm-2" name="aBuscar" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<br>
+<div id="response">
+            <p>Estamos en: {{ubicacion}}</p>
+            <br>
+            <p>
+            Carpetas:
+                {% for i in carpetas %}
+
+                <p>{{i}}</p>
+
+                {% endfor %}
+            </p>
+            <p>
+                Archivos:
+                {% for i in archivos %}
+
+                <p>{{i}}</p>
+
+                {% endfor %}
+
+            </p>
+        </div>
+<hr style="height: 5px; background: black"/>
+<br>
+<h1 style="font-size: 30px">Datos para crear carpeta</h1>
+
+<form action="/crearC/" method="GET">
+  <div class="form-row">
+    <div class="form-group col-auto">
+    <label for="exampleInputEmail1">Nombre</label>
+    <input type="text" class="form-control" name="creado" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Crear</button>
+  </div>
+</form>
+
+
+
+<br>
+<br>
+{{ mensaje }}
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>
