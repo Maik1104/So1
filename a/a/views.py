@@ -44,7 +44,7 @@ def buscar(request):
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def crearA(request):
-    if (request.get["opcion"])[0] in ["A", "a"]:
+    if (request.GET["opcion"])[0] in ["A", "a"]:
         try:
             name = request.GET["creado"]
             system(f"touch {name}")
