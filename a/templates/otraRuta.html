@@ -1,0 +1,16 @@
+{% extends "index2.html" %}
+
+{% block content %}
+<br>
+<h1 style="font-size: 30px">Datos para eliminar</h1>
+
+<form action="/otraRuta/" method="GET">
+  <div class="form-row">
+    <div class="form-group col-auto">
+    <label for="exampleInputEmail1">Ruta nueva:</label>
+    <input type="text" class="form-control" name="aBuscar" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Ver esta ruta</button>
+  </div>
+</form>
+{% endblock %}

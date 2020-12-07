@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from a.views import inicio, buscar, crearA, crearC, cambiarN, eliminar, copiar, mover
-from a.views import verPermisos, modificarPermisos, modificarPropietario
+from a.views import verPermisos, modificarPermisos, modificarPropietario, otraRuta
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -33,7 +33,8 @@ urlpatterns = [
     path('mover/', mover),
     path('verPermisos/', verPermisos),
     path('modificarPermisos/', modificarPermisos),
-    path('modificarPropietario/', modificarPropietario)
+    path('modificarPropietario/', modificarPropietario),
+    path('otraRuta/', otraRuta)
 
 ]
 
