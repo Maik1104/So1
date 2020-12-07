@@ -5,7 +5,7 @@
     <br>
     <h1 style="font-size: 30px">Datos para cambiar nombre</h1>
 
-    <form action="/cambiarN/" method="POST">
+    <form action="/cambiarN/" method="POST">{% csrf_token %}
   <div class="form-row">
     <div class="form-group col-auto">
     <label for="exampleInputEmail1">Nombre viejo</label>

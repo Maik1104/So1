@@ -24,6 +24,6 @@ urlpatterns = [
     path('inicio/', inicio),
     path('crearA/', crearA),
     path('crearC/', crearC),
-    path('cambiarN', cambiarN),
+    path('cambiarN/', cambiarN),
 
 ]
