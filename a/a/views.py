@@ -42,7 +42,7 @@ def buscar(request):
 
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
-def crear(request):
+def crearA(request):
     #name = request.GET[""]
     #com = "touch " + name
     #system(com)
@@ -50,10 +50,11 @@ def crear(request):
     try:
         name = request.GET["creado"]
         system(f"touch {name}")
+        mensaje = "El archivo fue creado con exito"
     except:
-        pass
+        mensaje = ""
     inicio(request)
-    return render(request, "crear.html")
+    return render(request, "crear.html", {"mensaje":mensaje})
 
 def createFolder(name):
     com = "mkdir " + name
