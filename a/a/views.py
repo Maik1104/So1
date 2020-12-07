@@ -74,8 +74,9 @@ def crearA(request):
         lArchivos.append([])
         for j in range(8):
             lArchivos[i].append(archivos2[i*8+j])
+        k = i
 
-    for i in range(-1,-len(archivos2)%8-1,-1):
+    for i in range(k*8+1,len(archivos2)):
         rArchivos[0].append(archivos2[i])
 
     for i in range(len(carpetas2)//8):
