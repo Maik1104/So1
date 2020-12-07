@@ -53,8 +53,21 @@ def crearA(request):
         mensaje = "El archivo fue creado con exito"
     except:
         mensaje = ""
-    inicio(request)
-    return render(request, "crear.html", {"mensaje":mensaje})
+
+    ubicacion = getoutput("pwd")
+    carpetas = getoutput("find . -maxdepth 1 -type d")
+    carpetas = carpetas.split("\n")
+    carpetas2 = []
+    for i in range(1, len(carpetas)):
+        carpetas2.append(carpetas[i][2:])
+
+    archivos = getoutput("find . -maxdepth 1 -type f")
+    archivos = archivos.split("\n")
+    archivos2 = []
+    for i in range(len(archivos)):
+        archivos2.append(archivos[i][2:])
+
+    return render(request, "crear.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def createFolder(name):
     com = "mkdir " + name
