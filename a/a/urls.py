@@ -20,5 +20,6 @@ from a.views import inicio, buscar
 
 urlpatterns = [
     path('', inicio),
-    path('buscar/', buscar)
+    path('buscar/', buscar),
+    path('inicio/', inicio)
 ]
