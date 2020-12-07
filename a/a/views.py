@@ -389,8 +389,11 @@ def verPermisos(request):
     try:
         nombre = request.GET["nombre"]
         mensaje=getoutput(f"ls -l {nombre}")
+        nombre = f"La informacion del objeto {nombre} son:"
     except:
         mensaje = ""
+        nombre = ""
+
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
