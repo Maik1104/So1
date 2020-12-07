@@ -23,5 +23,6 @@ urlpatterns = [
     path('buscar/', buscar),
     path('inicio/', inicio),
     path('crearA/', crearA),
-    path('crearC/', crearC)
+    path('crearC/', crearC),
+
 ]
