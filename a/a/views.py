@@ -338,7 +338,7 @@ def mover(request):
     try:
         nombreV = request.POST["viejo"]
         nombreN = request.POST["nuevo"]
-        system(f"mv -r {nombreV} {nombreN}")
+        system(f"mv {nombreV} {nombreN}")
         mensaje = "El archivo se movio con exito"
     except:
         mensaje = ""
