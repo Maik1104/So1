@@ -1,0 +1,15 @@
+{% extends "index2.html" %}
+
+{% block content %}
+
+    <br>
+    <h1 style="font-size: 30px">Datos para copiar y pegar</h1>
+    <form action="/copiar/" method="post">{% csrf_token %}
+        <p>Nombre: <input class="form-control" type="text" name="inicio"></p>
+        <p>Destino: <input class="form-control" type="text" name="destino"></p>
+        <input class="btn btn-primary" type="submit" value="Copiar">
+    </form>
+
+    <br>
+    <h1>{{ mensaje }}</h1>
+{% endblock %}

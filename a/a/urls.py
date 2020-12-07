@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from a.views import inicio, buscar, crearA, crearC, cambiarN, eliminar
+from a.views import inicio, buscar, crearA, crearC, cambiarN, eliminar, copiar
 
 
 urlpatterns = [
@@ -25,6 +25,7 @@ urlpatterns = [
     path('crearA/', crearA),
     path('crearC/', crearC),
     path('cambiarN/', cambiarN),
-    path('eliminar/', eliminar)
+    path('eliminar/', eliminar),
+    path('copiar/', copiar)
 
 ]
