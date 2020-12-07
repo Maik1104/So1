@@ -5,7 +5,7 @@ from django import forms
 
 def inicio(request):
 
-    system("cd ")
+    system("cd /home")
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
