@@ -429,7 +429,7 @@ def verPermisos(request):
     return render(request, "verPermisos.html",
                   {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
                    "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
-                   "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
+                   "numeros": [1, 2, 3, 4, 5, 6, 7, 8], "archivo":nombre})
 
 def seeInfo(name):
     com = "ls -l " + name
