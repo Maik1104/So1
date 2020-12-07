@@ -541,7 +541,7 @@ def modificarPropietario(request):
 
 def otraRuta(request):
 
-    busqueda = request.POST["nuevaRuta"]
+    busqueda = request.POST["rutanueva"]
     if busqueda == "":
         busqueda = "."
         ubicacion = getoutput("pwd")
