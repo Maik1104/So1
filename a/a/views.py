@@ -20,8 +20,32 @@ def inicio(request):
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
 
+    lArchivos = []
+    rArchivos = [[]]
+    lCarpetas = []
+    rCarpetas = [[]]
 
-    return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2})
+    for i in range(len(archivos2) // 6):
+        lArchivos.append([])
+        for j in range(6):
+            lArchivos[i].append(archivos2[i * 6 + j])
+
+    for i in range(-1, -(len(archivos2) % 6) - 1, -1):
+        rArchivos[0].append(archivos2[i])
+
+    for i in range(len(carpetas2) // 6):
+        lCarpetas.append([])
+        for j in range(6):
+            lCarpetas[i].append(carpetas2[i * 6 + j])
+
+    for i in range(-1, -(len(carpetas2) % 6) - 1, -1):
+        rCarpetas[0].append(carpetas2[i])
+
+    return render(request, "index2.html",
+                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
+                   "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
+                   "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
+
 
 def buscar(request):
 
@@ -40,8 +64,32 @@ def buscar(request):
     for i in range(len(archivos)):
         archivos2.append(archivos[i][2:])
 
+    lArchivos = []
+    rArchivos = [[]]
+    lCarpetas = []
+    rCarpetas = [[]]
 
-    return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
+    for i in range(len(archivos2) // 6):
+        lArchivos.append([])
+        for j in range(6):
+            lArchivos[i].append(archivos2[i * 6 + j])
+
+    for i in range(-1, -(len(archivos2) % 6) - 1, -1):
+        rArchivos[0].append(archivos2[i])
+
+    for i in range(len(carpetas2) // 6):
+        lCarpetas.append([])
+        for j in range(6):
+            lCarpetas[i].append(carpetas2[i * 6 + j])
+
+    for i in range(-1, -(len(carpetas2) % 6) - 1, -1):
+        rCarpetas[0].append(carpetas2[i])
+
+    return render(request, "index2.html",
+                  {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
+                   "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
+                   "numeros": [1, 2, 3, 4, 5, 6, 7, 8]})
+
 
 def crearA(request):
 
