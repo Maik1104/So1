@@ -51,14 +51,14 @@ def buscar(request):
 
     busqueda = request.GET["aBuscar"]
     ubicacion = getoutput("pwd")
-    carpetas = getoutput(f"find . -maxdepth 1 -type d | grep {busqueda}")
+    carpetas = getoutput(f"find . -maxdepth 1 -type d | grep {busqueda} -i")
     carpetas = carpetas.split("\n")
     carpetas2 = []
     for i in range(1, len(carpetas)):
         carpetas2.append(carpetas[i][2:])
 
 
-    archivos = getoutput(f"find . -maxdepth 1 -type f | grep {busqueda}")
+    archivos = getoutput(f"find . -maxdepth 1 -type f | grep {busqueda} -i")
     archivos = archivos.split("\n")
     archivos2 = []
     for i in range(len(archivos)):
