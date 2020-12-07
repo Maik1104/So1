@@ -440,7 +440,7 @@ def modificarPermisos(request):
     try:
         nombre = request.POST["nombre"]
         numero = str(request.POST["numero"])
-        system(f"chmod -r {numero} {nombre}")
+        system(f"chmod -R {numero} {nombre}")
         mensaje=getoutput(f"ls -l {nombre}")
         nombre = f"La nueva informacion del objeto {nombre} es:"
     except:
