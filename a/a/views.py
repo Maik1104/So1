@@ -482,7 +482,7 @@ def modificarPermisos(request):
     for i in range(-1, -(len(carpetas2) % 6) - 1, -1):
         rCarpetas[0].append(carpetas2[i])
 
-    return render(request, "verPermisos.html",
+    return render(request, "modificarPermisos.html",
                   {"ubicacion": ubicacion, "carpetas": carpetas2, "archivos": archivos2, "mensaje": mensaje,
                    "lArchivos": lArchivos, "rArchivos": rArchivos, "lCarpetas": lCarpetas, "rCarpetas": rCarpetas,
                    "numeros": [1, 2, 3, 4, 5, 6, 7, 8], "archivo":nombre})
