@@ -5,18 +5,7 @@
     <br>
     <h1 style="font-size: 30px">Datos para cambiar nombre</h1>
 
-    <form action="/cambiarN/" method="POST">{% csrf_token %}
-  <div class="form-row">
-    <div class="form-group col-auto">
-    <label>Nombre viejo</label>
-    <input type="text" class="form-control" name="nombreV">
-    </div>
-      <div class="form-group col-auto">
-    <label>Nombre nuevo</label>
-    <input type="text" class="form-control" name="nombreN">
-    </div>
-  <button type="submit" class="btn btn-primary">Cambiar nombre</button>
-  </div>
-    </form>
-
+    <p>Nombre viejo: <input class="form-control" type="text" name="nombreV"></p>
+    <p>Nombre nuevo: <input class="form-control" type="text" name="nombreN"></p>
+    <input class="btn btn-primary" type="submit" value="Cambiar nombre">
 {% endblock %}
