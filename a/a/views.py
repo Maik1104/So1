@@ -40,7 +40,7 @@ def buscar(request):
         archivos2.append(archivos[i][2:])
 
 
-    return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2})
+    return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def createFile(name):
     com = "touch " + name
