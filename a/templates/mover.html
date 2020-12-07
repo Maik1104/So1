@@ -1,0 +1,15 @@
+{% extends "index2.html" %}
+
+{% block content %}
+
+    <br>
+    <h1 style="font-size: 30px">Datos para mover</h1>
+    <form action="/cambiarN/" method="post">{% csrf_token %}
+        <p>Nombre: <input class="form-control" type="text" name="viejo"></p>
+        <p>Destino: <input class="form-control" type="text" name="nuevo"></p>
+        <input class="btn btn-primary" type="submit" value="Cambiar nombre">
+    </form>
+
+    <br>
+    <h1>{{ mensaje }}</h1>
+{% endblock %}
