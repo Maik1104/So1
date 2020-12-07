@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from subprocess import *
 from os import system
+from django import forms
 
 def inicio(request):
 
@@ -43,13 +44,24 @@ def buscar(request):
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
 def crearA(request):
-    try:
-        name = request.GET["creado"]
-        system(f"touch {name}")
-        mensaje = "El archivo fue creado con exito"
-        mensaje = request.getElementById("inlineFormCustomSelect")
-    except:
-        mensaje = ""
+    if (request.get["opcion"])[0] in ["A", "a"]:
+        try:
+            name = request.GET["creado"]
+            system(f"touch {name}")
+            mensaje = "El archivo fue creado con exito"
+        except:
+            mensaje = ""
+
+    elif (request.get["opcion"])[0] in ["C", "c"]:
+        try:
+            name = request.GET["creado"]
+            system(f"mkdir {name}")
+            mensaje = "La carpeta fue creada con exito"
+        except:
+            mensaje = ""
+
+    else:
+        mensaje = "Por favor ingrese 'Carpeta' o 'Archivo'"
 
     ubicacion = getoutput("pwd")
     carpetas = getoutput("find . -maxdepth 1 -type d")
