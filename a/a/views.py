@@ -42,12 +42,12 @@ def buscar(request):
 
     return render(request, "index2.html", {"ubicacion":ubicacion, "carpetas":carpetas2, "archivos":archivos2, "busqueda":busqueda})
 
-def createFile(name):
+def crear(request):
+    name = request.GET[""]
     com = "touch " + name
     system(com)
     res = getoutput("ls")
-    print(res)
-    return res
+    return render(request, "crear.html")
 
 def createFolder(name):
     com = "mkdir " + name

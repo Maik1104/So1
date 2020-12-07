@@ -35,7 +35,7 @@
             <a class="nav-link" href="#">Copiar</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Propietario</a>
+            <a class="nav-link" href="#">Eliminar</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Permisos</a>
@@ -49,26 +49,19 @@
   </div>
 </nav>
 <div id="response">
-            <p>Estamos en: {{ubicacion}}</p>
-            <br>
-            <p>
-            Carpetas:
-                {% for i in carpetas %}
 
-                <p>{{i}}</p>
-
-                {% endfor %}
-            </p>
-            <p>
-                Archivos:
-                {% for i in archivos %}
-
-                <p>{{i}}</p>
-
-                {% endfor %}
-
-            </p>
-        </div>
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+  <label class="form-check-label" for="defaultCheck2">
+    Disabled checkbox
+  </label>
+</div>
 
     {% bootstrap_javascript jquery='full' %}
 </body>
