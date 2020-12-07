@@ -13,7 +13,10 @@
     <style>
         body {background-color:beige; font-family: Bahnschrift; margin: 15px}
         div.form-check {font-family: Bahnschrift}
-        .archiv {height: 70px; width: 90px; background-image: url("iconos/archivo.png");}
+        .archiv, .carpet {height: 70px; width: 90px;}
+        .archiv{background: darkseagreen}
+        .carpet{background: indianred}
+
     </style>
   </head>
 <body>
@@ -77,6 +80,8 @@
 
             </p>
         </div>-->
+<h1>Archivos</h1>
+
 {% for i in lArchivos %}
 
 <div class="row">
@@ -89,6 +94,47 @@
 </div>
 
 {% endfor %}
+
+{% for i in rArchivos %}
+
+<div class="row">
+    {% for j in i %}
+    <div class="col d-flex justify-content-center flex-column align-items-center">
+        <button class="archiv"></button>
+        <label>{{ j }}</label>
+    </div>
+    {% endfor %}
+</div>
+
+{% endfor %}
+
+<h1>Carpetas</h1>
+
+{% for i in lCarpetas %}
+
+<div class="row">
+    {% for j in i %}
+    <div class="col d-flex justify-content-center flex-column align-items-center">
+        <button class="carpet"></button>
+        <label>{{ j }}</label>
+    </div>
+    {% endfor %}
+</div>
+
+{% endfor %}
+{% for i in rCarpetas %}
+
+<div class="row">
+    {% for j in i %}
+    <div class="col d-flex justify-content-center flex-column align-items-center">
+        <button class="carpet"></button>
+        <label>{{ j }}</label>
+    </div>
+    {% endfor %}
+</div>
+
+{% endfor %}
+
 
 <hr style="height: 5px; background: black"/>
 
