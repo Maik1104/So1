@@ -1,0 +1,17 @@
+{% extends "index2.html" %}
+
+{% block content %}
+    <br>
+<h1 style="font-size: 30px">Datos para modificar propietario</h1>
+
+    <form action="/modificarPropietario/" method="post">{% csrf_token %}
+        <p>Nombre: <input class="form-control" type="text" name="nombre"></p>
+        <p>Nuevo propietario: <input class="form-control" type="text" name="propietario"></p>
+        <input class="btn btn-primary" type="submit" value="Cambiar permisos">
+    </form>
+
+
+<br>
+<h1>{{ archivo }}</h1>
+<h1>{{ mensaje }}</h1>
+{% endblock %}
